@@ -6,10 +6,12 @@ public class multi {
 
 		// sumRow(a, 2);
 		// sumColumn(a, 2);
-		sumTotal(a, 2);
+		// sumTotal(a, 2);
+		//print(reverseRow(a, 2));
+		snakeDraft(10, 3);
 	}
 
-	public void print(int[][] a) {
+	public static void print(int[][] a) {
 		for (int r=0; r<a.length; r++) {
 			for (int c=0; c<a[r].length; c++) {
 				System.out.print(a[r][c] + " ");
@@ -50,5 +52,25 @@ public class multi {
 		}
 		System.out.println(sum);
 		return sum;
+	}
+
+	public static int[][] reverseRow(int[][] a, int x) {
+		for (int c=a.length + 1; c>=0; c--) {
+			System.out.print(a[x][c] + " ");
+		}
+		return a;
+	}
+
+	public static int[][] snakeDraft(int players, int rounds) {
+		int[][] x = new int[rounds][players];
+		for (int r=0; r<x.length; r++) {
+			for (int c=0; c<x[r].length; c++) {
+				for (int i=0; i<x.length; i++) {
+					x[r][c] = i;
+					System.out.print(x[r][c]);
+				}
+			}
+		}
+		return x;
 	}
 }
